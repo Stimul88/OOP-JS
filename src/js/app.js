@@ -6,12 +6,12 @@ import Undead from './Undead.js';
 import Zombie from './Zombie.js';
 import Character from "./Character.js";
 
-const bowerman = new Bowerman('Pups');
-const swordsman = new Swordsman('Colt');
-const magician = new Magician('Gendalf');
-const daemon = new Daemon('Baal');
-const undead = new Undead('Eslial');
-const zombie = new Zombie('Jon');
+const bowerman = new Bowerman('Bowman');
+const swordsman = new Swordsman('Swordsman');
+const magician = new Magician('Magician');
+const daemon = new Daemon('Daemon');
+const undead = new Undead('Undead');
+const zombie = new Zombie('Zombie');
 
 
 class Pop extends Character {

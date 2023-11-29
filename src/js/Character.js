@@ -2,19 +2,21 @@ const heroArray = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombi
 
 
 export default class Character {
-  constructor(name, type, attack, defence) {
-    this.name = name;
-    if (!(2 < this.name.trim().length && this.name.trim().length <= 10)) {
+  constructor(name, type) {
+    if (!(2 < name.trim().length && name.trim().length <= 10)) {
       throw new Error('the name must contain at least 2 characters and a maximum of 10 characters');
     }
-    this.type = type;
+
     if (!heroArray.includes(type)) {
       throw new Error('type not in the list');
     }
+
+    this.name = name;
+    this.type = type;
     this.health = 100;
     this.level = 1;
-    this.attack = attack;
-    this.defence = defence;
+    this.attack = undefined;
+    this.defence = undefined;
   }
 
   levelUp () {

@@ -22,11 +22,82 @@ class Pop extends Character {
 
 }
 
-const result = new Bowerman('Pups');
+test('bowerman test', () => {
+  const bowerman = new Bowerman('Bowman');
+  const correct = {
+    name: 'Bowman',
+    type: 'Bowman',
+    health: 100,
+    level: 1,
+    attack: 25,
+    defence: 25,
+  }
+  expect(bowerman).toEqual(correct);
+});
 
+test('swordsman test', () => {
+  const swordsman = new Swordsman('Swordsman');
+  const correct = {
+    name: 'Swordsman',
+    type: 'Swordsman',
+    health: 100,
+    level: 1,
+    attack: 40,
+    defence: 10,
+  }
+  expect(swordsman).toEqual(correct);
+});
 
-test('correct name test', () => {
-  expect(result.name).toBe('Pups');
+test('magician test', () => {
+  const magician = new Magician('Magician');
+  const correct = {
+    name: 'Magician',
+    type: 'Magician',
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  }
+  expect(magician).toEqual(correct);
+});
+
+test('undead test', () => {
+  const undead = new Undead('Undead');
+  const correct = {
+    name: 'Undead',
+    type: 'Undead',
+    health: 100,
+    level: 1,
+    attack: 25,
+    defence: 25,
+  }
+  expect(undead).toEqual(correct);
+});
+
+test('zombie test', () => {
+  const zombie = new Zombie('Zombie');
+  const correct = {
+    name: 'Zombie',
+    type: 'Zombie',
+    health: 100,
+    level: 1,
+    attack: 40,
+    defence: 10,
+  }
+  expect(zombie).toEqual(correct);
+});
+
+test('daemon test', () => {
+  const daemon = new Daemon('Daemon');
+  const correct = {
+    name: 'Daemon',
+    type: 'Daemon',
+    health: 100,
+    level: 1,
+    attack: 10,
+    defence: 40,
+  }
+  expect(daemon).toEqual(correct);
 });
 
 test('incorrect name test', () => {
@@ -36,7 +107,8 @@ test('incorrect name test', () => {
 });
 
 test('type to be in list test', () => {
-  expect(heroArray).toContain(result.type);
+  const bowerman = new Bowerman('Bowman');
+  expect(heroArray).toContain(bowerman.type);
 });
 
 test('type not in list test', () => {
@@ -46,8 +118,9 @@ test('type not in list test', () => {
 });
 
 test('level up test', () => {
-  result.levelUp()
-  expect(result.level).toBe(2);
+  const bowerman = new Bowerman('Bowman');
+  bowerman.levelUp()
+  expect(bowerman.level).toBe(2);
 });
 
 
@@ -58,51 +131,25 @@ test('level up impossible test', () => {
 });
 
 test('attack up test', () => {
-  result.levelUp()
-  expect(result.attack).toBe(36);
+  const bowerman = new Bowerman('Bowman');
+  bowerman.levelUp()
+  expect(bowerman.attack).toBe(30);
 });
 
 test('defence up test', () => {
-  result.levelUp()
-  expect(result.defence).toBe(43.2);
+  const bowerman = new Bowerman('Bowman');
+  bowerman.levelUp()
+  expect(bowerman.defence).toBe(30);
 });
-
 
 test('health up test', () => {
-  result.levelUp()
-  expect(result.health).toBe(100);
+  const bowerman = new Bowerman('Bowman');
+  bowerman.levelUp()
+  expect(bowerman.health).toBe(100);
 });
-
 
 test('damage test', () => {
-  result.damage(30)
-  expect(result.health).toBe(85.552);
-});
-
-
-test('correct type Swordsman test', () => {
-  const result = new Swordsman('Pups');
-  expect(result.type).toBe('Swordsman');
-});
-
-
-test('correct type Magician test', () => {
-  const result = new Magician('Pups');
-  expect(result.type).toBe('Magician');
-});
-
-
-test('correct type Daemon test', () => {
-  const result = new Daemon('Pups');
-  expect(result.type).toBe('Daemon');
-});
-
-test('correct type Undead test', () => {
-  const result = new Undead('Pups');
-  expect(result.type).toBe('Undead');
-});
-
-test('correct type Zombie test', () => {
-  const result = new Zombie('Pups');
-  expect(result.type).toBe('Zombie');
+  const bowerman = new Bowerman('Bowman');
+  bowerman.damage(30)
+  expect(bowerman.health).toBe(77.5);
 });
